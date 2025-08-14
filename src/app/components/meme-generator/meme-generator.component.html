@@ -1,25 +1,22 @@
 <div class="w-full flex flex-col md:flex-row items-center justify-around py-4 gap-4">
-  <mat-card>
-    <div class="relative max-h-[80vh]">
-      <img matCardImage [src]="imageUrl" alt="Distracted Boyfriend Meme" class="w-full h-auto">
-      <div class="absolute top-0 w-full text-center text-white text-2xl uppercase bg-black bg-opacity-50 p-2">
-        {{ topText }}
-      </div>
-      <div class="absolute bottom-0 w-full text-center text-white text-2xl uppercase bg-black bg-opacity-50 p-2">
-        {{ bottomText }}
-      </div>
+  <app-meme-viewer #child [imageUrl]="imageUrl" [topText]="topText" [bottomText]="bottomText"></app-meme-viewer>
+  <div class="flex flex-col w-full p-4 gap-4 bg-white rounded-lg">
+    <h1 class="text-3xl font-medium">Créer un meme</h1>
+    <mat-form-field>
+      <mat-label>URL Image</mat-label>
+      <input matInput [(ngModel)]="imageUrl">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Text du haut</mat-label>
+      <input matInput [(ngModel)]="topText">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Text du bas</mat-label>
+      <input matInput [(ngModel)]="bottomText">
+    </mat-form-field>
+    <div class="flex flex-row gap-2">
+      <button mat-raised-button (click)="signalerAjout()">Créer</button>
+      <button mat-raised-button [disabled]="false" color="primary" (click)="saveMemo()">Exporter</button>
     </div>
-  </mat-card>
-  <div class="flex flex-col w-full px-4">
-    <mat-form-field>
-      <mat-label>First name</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Long Last Name That Will Be Truncated</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <div class="flex flex-row gap-2"></div>
-    <button mat-raised-button>Créer</button>
   </div>
 </div>

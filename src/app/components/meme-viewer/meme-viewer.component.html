@@ -1,11 +1,13 @@
-<mat-card class="meme-card">
-  <div class="relative">
-    <img matCardImage src="https://imgflip.com/s/meme/Two-Buttons.jpg" alt="Distracted Boyfriend Meme">
-    <div class="absolute top-0 w-full text-center text-white text-2xl uppercase bg-black bg-opacity-50 p-2">
-      Top Text
+<mat-card>
+  <div class="relative" #screenContent>
+    <img matCardImage [src]="imageUrl" alt="Distracted Boyfriend Meme">
+    <div class="absolute top-0 w-full text-center text-white text-2xl uppercase"
+      style="text-shadow: 2px 2px 4px #000000;">
+      {{ topText }}
     </div>
-    <div class="absolute bottom-0 w-full text-center text-white text-2xl uppercase bg-black bg-opacity-50 p-2">
-      Bottom Text
+    <div class="absolute bottom-0 w-full text-center text-white text-2xl uppercase font-bold"
+      style="text-shadow: 2px 2px 4px #000000;">
+      {{ bottomText }}
     </div>
   </div>
 </mat-card>

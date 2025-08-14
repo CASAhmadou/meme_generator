@@ -1,3 +1,8 @@
-<p>
-  meme-list works!
-</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div *ngFor="let meme of list">
+    <div (click)="signalerSelection(meme)" class="cursor-pointer hover:shadow-2xl">
+      <app-meme-viewer [imageUrl]="meme.imageUrl" [topText]="meme.topText"
+      [bottomText]="meme.bottomText"></app-meme-viewer>
+    </div>
+  </div>
+</div>

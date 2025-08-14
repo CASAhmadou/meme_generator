@@ -3,7 +3,10 @@
 </mat-toolbar>
 <div class="w-full flex justify-center">
   <div class="container">
-    <app-meme-generator></app-meme-generator>
+    <app-meme-generator (ajout)="ajouterMeme($event)" [imageUrl]="image" [topText]="haut" [bottomText]="bas"></app-meme-generator>
+    <section class="w-full flex flex-col gap-4">
+      <app-meme-list [list]="listeMemes" (selectionMeme)="faireLaSelection($event)"></app-meme-list>
+    </section>
   </div>
 </div>
 

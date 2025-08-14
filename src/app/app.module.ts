@@ -13,6 +13,7 @@ import { MemeListComponent } from './components/meme-list/meme-list.component';
 import { MatFormField, MatLabel } from "@angular/material/form-field";
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     MatFormField,
     MatLabel,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
 ],
   providers: [
     provideAnimationsAsync()
